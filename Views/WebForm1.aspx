@@ -5,27 +5,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Datos de Familia</title>
+
+    <!-- Bootstrap CSS y JS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <!-- Contenido de la página -->
         <div class="container shadow rounded mt-5">
             <div class="container text-center mt-5">
-                <h1 class="txt-center mt4">Información de las Familias</h1>
+
+                <!-- Título de la página -->
+                <h1 class="txt-center mt5">Información de las Familias</h1>
+
+                <!-- Sección para subir el archivo XML -->
                 <div class="mx-auto">
                     <asp:FileUpload runat="server" ID="fileUpload" Accept=".xml" CssClass="form-control mb-3" />
                 </div>
-                <div class="text-center mt-3">
+
+                <!-- Botones de acción -->
+                <div class="text-center m-3">
                     <asp:Button runat="server" ID="btnCargar" Text="Cargar Archivo XML" OnClick="btnCargar_Click" CssClass="btn btn-primary m-2" />
                     <asp:Button runat="server" ID="btnNombre" Text="Ordenar Por Nombre" OnClick="btnNombre_Click" CssClass="btn btn-secondary m-2" />
                     <asp:Button runat="server" ID="btnEdad" Text="Ordenar Por Edad" OnClick="btnEdad_Click" CssClass="btn btn-secondary m-2" />
                 </div>
+
+                <!-- Mensaje informativo -->
+                <div class="container m-2">
+                    <asp:Label runat="server" ID="lblMensaje" CssClass="alert alert alert-light" Visible="false"></asp:Label>
+                </div>
+
             </div>
-            <div class="container shadow rounded m-2">
+            <!-- Sección para mostrar las tablas de datos -->
+            <div class="container shadow rounded m-3">
                 <div class="container table-responsive text-center">
+                    <!-- Tabla de Padres -->
                     <h2 class="mt4">Lista de Padres</h2>
                     <asp:GridView runat="server" ID="gvPadres" AutoGenerateColumns="false" CssClass="table text-center align-middle table-bordered table-hover rounded p-2">
                         <Columns>
@@ -37,7 +54,9 @@
                         </Columns>
                     </asp:GridView>
                 </div>
+
                 <div class="container table-responsive text-center">
+                    <!-- Tabla de Madres -->
                     <h2 class="mt4">Lista de Madres</h2>
                     <asp:GridView runat="server" ID="gvMadres" AutoGenerateColumns="false" CssClass="table text-center align-middle table-bordered table-hover rounded p-2">
                         <Columns>
@@ -49,7 +68,9 @@
                         </Columns>
                     </asp:GridView>
                 </div>
+
                 <div class="container table-responsive text-center">
+                    <!-- Tabla de Hijos -->
                     <h2 class="mt4">Lista de Hijos</h2>
                     <asp:GridView runat="server" ID="gvHijos" AutoGenerateColumns="false" CssClass="table text-center align-middle table-bordered table-hover rounded p-2">
                         <Columns>
@@ -61,6 +82,7 @@
                         </Columns>
                     </asp:GridView>
                 </div>
+
             </div>
         </div>
     </form>
