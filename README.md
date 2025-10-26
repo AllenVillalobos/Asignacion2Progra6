@@ -1,7 +1,7 @@
 
 Resumen
 -------
-El proyecto se trata de una pplicación web ASP.NET Web Forms que muestra información de familias (padres, madres, hijos) cargada desde un archivo XML. 
+El proyecto se trata de una applicación web ASP.NET Web Forms que muestra información de familias (padres, madres, hijos) cargada desde un archivo XML
 
 Instalación
 -----------
@@ -10,9 +10,8 @@ Instalación
 
 Construir y ejecutar
 --------------------
-
 1. Abir el proyecto clonado
-2. Ejecutar
+2. Ejecutar el proyecto clonado
 
 Uso
 ---
